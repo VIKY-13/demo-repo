@@ -4,6 +4,7 @@ import (
 	// "fmt"
 	"log"
 	// "net/http"
+	"os"
 
 	"github.com/gofiber/fiber/v2"
 )
@@ -17,7 +18,7 @@ func main(){
 	app.Get("/env",func(c *fiber.Ctx) error {
 		return c.SendString("env")
 	})
-	port :="3000"
+	port :=os.Getenv("PORT")
 	log.Fatal(app.Listen("0.0.0.0:"+port))
 	
 }
