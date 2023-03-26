@@ -9,7 +9,6 @@ import (
 )
 
 func main(){
-	os.Setenv("PORT","4000")
 	http.HandleFunc("/", Hello)
 	http.HandleFunc("/w", welcome)
 	port :=os.Getenv("PORT")
